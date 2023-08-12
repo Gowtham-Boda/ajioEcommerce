@@ -1,25 +1,19 @@
-import {Route, Switch, Redirect} from 'react-router-dom'
-
-import LoginForm from './components/LoginForm'
-import Home from './components/Home'
-import Products from './components/Products'
-import ProductItemDetails from './components/ProductItemDetails'
-import Cart from './components/Cart'
-import NotFound from './components/NotFound'
-import ProtectedRoute from './components/ProtectedRoute'
-
-import './App.css'
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
+import SignupForm from './SignupForm'
+import LoginForm from './LoginForm'
 
 const App = () => (
-  <Switch>
-    <Route exact path="/login" component={LoginForm} />
-    <ProtectedRoute exact path="/" component={Home} />
-    <ProtectedRoute exact path="/products" component={Products} />
-    <ProtectedRoute exact path="/products/:id" component={ProductItemDetails} />
-    <ProtectedRoute exact path="/cart" component={Cart} />
-    <Route path="/not-found" component={NotFound} />
-    <Redirect to="not-found" />
-  </Switch>
+  <div
+    style={{
+      background: 'linear-gradient(to bottom, #3333cc 0%, #f2f2f2 100%)',
+      minHeight: '100vh',
+      padding: '30px',
+    }}
+  >
+    <SignupForm />
+    <LoginForm />
+  </div>
 )
 
 export default App
